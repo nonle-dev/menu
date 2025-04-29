@@ -1,8 +1,7 @@
-import react from '@vitejs/plugin-react'
-import path from 'path'
-import { defineConfig } from 'vite'
-import zaloMiniApp from 'zmp-vite-plugin'
-
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import { defineConfig } from 'vite';
+import zaloMiniApp from 'zmp-vite-plugin';
 export default defineConfig({
   plugins: [react(), zaloMiniApp()],
   resolve: {
@@ -10,8 +9,26 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  base: '/',  // Đảm bảo base path phù hợp cho mọi môi trường
   build: {
-    outDir: 'dist', // Thêm cấu hình output thư mục dist
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'swiper'],  // Chia các thư viện lớn thành chunk riêng biệt
+        },
+      },
+    },
   },
-  base: '/', 
-})
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+    strictPort: true,
+    cors: true,
+    proxy: {
+      '/api': 'http://localhost:5000',  // Nếu có proxy API
+    },
+  },
+  
+});
+
