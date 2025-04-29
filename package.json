@@ -15,9 +15,9 @@
     "Samsung >= 5"
   ],
   "scripts": {
-    "build": "tsc && vite build",
+    "dev": "vite --host",
+    "build": "vite build --base=./",
     "build:template": "cd template && vite build && cp app-config.json ./www",
-    "dev": "vite dev --port 3000 --host 127.0.0.1",
     "deploy": "pnpm run build && zmp-cli deploy --existing",
     "deploy:live": "pnpm run build && zmp-cli deploy --existing --testing --desc",
     "lint": "eslint --ext .ts,.tsx src",
