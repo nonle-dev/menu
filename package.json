@@ -15,14 +15,15 @@
     "Samsung >= 5"
   ],
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build --base=./",
-    "build:template": "cd template && vite build && cp app-config.json ./www",
-    "deploy": "pnpm run build && zmp-cli deploy --existing",
-    "deploy:live": "pnpm run build && zmp-cli deploy --existing --testing --desc",
-    "lint": "eslint --ext .ts,.tsx src",
-    "fix": "eslint --ext .ts,.tsx src --fix"
-  },
+  "dev": "vite --host",
+  "build": "vite build --base=./",
+  "build:template": "cd template && vite build && cp app-config.json ./www",
+  "deploy": "pnpm run build && zmp-cli deploy --existing",
+  "deploy:live": "pnpm run build && zmp-cli deploy --existing --testing --desc",
+  "lint": "eslint --ext .ts,.tsx src",
+  "fix": "eslint --ext .ts,.tsx src --fix"
+}
+,
   "dependencies": {
     "@formatjs/intl-numberformat": "^8.10.0",
     "@radix-ui/react-scroll-area": "^1.0.5",
