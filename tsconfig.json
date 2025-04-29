@@ -20,7 +20,6 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src", "vite.config.mts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"],
+  "exclude": ["vite.config.mts"]
 }
-  
