@@ -13,5 +13,5 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Thêm cấu hình output thư mục dist
   },
-  base: './', 
+  base: '/', 
 })
