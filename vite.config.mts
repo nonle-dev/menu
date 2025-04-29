@@ -12,5 +12,8 @@ export default () => {
         '@': path.resolve(__dirname, 'src'),
       },
     },
+    build: {
+      outDir: 'dist', // Thêm cấu hình output thư mục dist
+    },
   })
 }
