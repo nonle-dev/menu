@@ -13,5 +13,5 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Thêm cấu hình output thư mục dist
   },
-  base: '/',  // Đảm bảo tài nguyên sẽ được tìm thấy đúng vị trí
+  base: process.env.NODE_ENV === 'production' ? './' : '/',
 })
